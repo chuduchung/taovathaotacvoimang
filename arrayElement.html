@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <label><input id="add" type="text"></label>
+    <button onclick="add_element_to_array()">Add</button>
+    <button onclick="display_array()">Display</button>
+    <div id="show"></div>
+    <hr>
+
+
+<script>
+    let x = 0; //chi so truy cap phan tu
+    let array = Array(); //tao mang de luu gia tri nhap vao
+    function add_element_to_array() {
+        array[x] = document.getElementById("add").value; // gan gia tri o mang voi vi tri thu x
+        alert("Element: " + array[x] + " added " + x); // thong bao da them gia tri vao mang
+        x++; // tang bien x len
+        document.getElementById("add").value = "";
+    }
+
+    function display_array() {
+        let e = "<hr>"; // tao bien e chua the hr. moi lan hien thi phan tu the se tao phan cach
+        for (let i = 0; i < array.length; i++) { // duyet mang
+            e += "Element " + i + " = "  + array[i]  + "<br>"; // Mỗi lần duyệt lấy giá trị của các
+                                                           // phần tử cộng dồn vào biến e
+        }
+        document.getElementById("show").innerHTML = e;
+    }
+
+</script>
+</body>
+</html>
